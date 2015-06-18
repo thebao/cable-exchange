@@ -1,0 +1,35 @@
+{% extends "JACableBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Index{% endblock %}
+
+{% block jacable_body %}
+<ul class="phones" data-bind="foreach: filteredCables().sort(sorter)">
+    <li>
+        <h4>
+            <a href="#" data-bind="text: name, attr: { href: id}"></a>
+        </h4>
+        <div class="item-wrap">
+            <div class="charge-list-img float-left">
+                <a class="thumb" data-bind="attr: { href: id}"><img data-bind="attr: { src: configuration.chargerImgUrl + imageUrl, alt:name, title:name }" /></a>
+            </div>
+            <div class="float-left">
+                <p data-bind="text: snippet"></p>
+                <p data-bind="text: type"></p>
+                <a href="{{ path('ja_cable_remove') }}">remove</a>
+            </div>
+        </div>
+        <div class="float-right item-specs">
+            <div class="sub-specs">
+                <i class="fa fa-bolt"></i> <span data-bind="text: volts"></span> volts
+            </div>
+            <div class="sub-specs">
+                <i class="fa fa-plug"></i> <span data-bind="text: amps"></span> amp
+            </div>
+            <div class="sub-specs">
+                <i class="fa fa-arrows-h"></i> <span data-bind="text: length"></span> m
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,57 @@
+JA\CableBundle\Entity\Cable:
+  cable1:
+    name: Chargeur DS LITE
+    volts: 5.2
+    amps: 1
+    type: 3
+    length: 1.2
+    imageUrl: phone1.jpg
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  cable2:
+    name: Motorola XOOM with Wi-Fi
+    volts: 4.8
+    amps: 1.7
+    type: 2
+    length: 3
+    imageUrl: laptop1.jpg
+    description: Curabitur eu odio imperdiet, blandit lacus eu, pulvinar ante.
+  cable3:
+    name: Galaxy S6
+    volts: 2.6
+    amps: 4.1
+    type: 1
+    length: 1.4
+    imageUrl: phone3.jpg
+    description: Etiam ac tempus metus, at imperdiet dolor. Integer ut feugiat libero. 
+  cable4:
+    name: Cisco WP-75S
+    volts: 1.9
+    amps: 2.8
+    type: 3
+    length: 4.5
+    imageUrl: router2.jpg
+    description: Sed nibh lorem, rutrum id enim id, volutpat mattis odio.
+  cable5:
+    name: Chargeur iPhone 6
+    volts: 3.7
+    amps: 1.4
+    type: 1
+    length: 2.1
+    imageUrl: phone2.jpg
+    description: Nullam ut interdum nulla. Duis quis tellus viverra, dapibus metus nec, pharetra tellus.
+  cable6:
+    name: Routeur LinkSys
+    volts: 2.8
+    amps: 7.2
+    type: 3
+    length: 3.5
+    imageUrl: router1.jpg
+    description: Sed et posuere nibh. 
+  cable7:
+    name: Tablette Nexus One
+    volts: 2
+    amps: 3.5
+    type: 1
+    length: 1.7
+    imageUrl: laptop2.jpg
+    description: In placerat tincidunt ligula, in consectetur mauris gravida nec.

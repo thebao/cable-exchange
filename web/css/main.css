@@ -1,0 +1,212 @@
+a:hover, a:active, a:focus {
+    outline:none;
+}
+
+@font-face {
+    font-family: "Header";
+    src: url("../fonts/RaysHand-Regular.ttf");
+}
+
+h1{
+    margin: 0px -15px 0px -15px;
+    padding:24px;
+    background:#F58723;
+    color:#327CCB;
+    margin-left: -15px;
+    font-family: "Header";
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.affix{
+    top:0;
+}
+a.white {
+    color:white;
+}
+
+
+
+
+#sidebar{
+    color: #FFF;
+    margin-right:-15px;
+    margin-left:-15px;
+    padding:15px;
+    background-color: #327CCB;
+}
+
+.page-body > .right-side {
+    padding-top:24px;
+}
+.navbar {
+    border: none;
+}
+
+.toggler:hover{
+    cursor: pointer;
+}
+.toggle-wrap{
+    width: 180px;
+}
+.toggle-zone{
+    width: 140px;
+    margin:0 !important;
+    padding: 0 !important;
+    height:auto;
+}
+
+.toggle-zone > div{
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.left-side input[type='text'], .left-side select{
+    color:black;
+    width: 100%;
+}
+
+.left-side .radio label{
+    font-size:1.2em;
+}
+
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
+
+input[type="radio"]:checked + label span {
+    background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
+
+input[type="checkbox"]:checked + label span {
+    background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+
+
+
+.charge-list-img img{
+    max-height:64px;
+    max-width:64px;
+}
+.charge-list-img{
+    width:80px;
+}
+
+.connectors .radio {
+    display: inline-block;
+}
+
+.connectors label{
+    width:44px;
+    height:24px;
+}
+
+.svg-inject{
+    width:100%;
+    height:100%;
+    float:left;
+}
+
+.svg-inject * {
+    fill:#6A9ED7;
+
+}
+
+input[type="checkbox"]:not(:checked) + label .svg-inject:hover * {
+    fill:#ABCCF0;
+}
+
+
+input[type="checkbox"]:checked + label .svg-inject * {
+    fill:#F58723;
+}
+
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+
+ul.phones{
+    list-style: none;
+}
+
+ul.phones li {
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    word-wrap: break-word;
+    padding: 0;
+    transition: all .5s;
+    overflow: hidden;
+}
+
+
+
+
+ul.phones .item-wrap{
+    padding:8px;
+}
+
+ul.phones li h4{
+    margin-top:0;
+    padding:8px;
+    width:100%;
+    background:#F58723;
+    color:white;
+}
+ul.phones li h4 a{
+    color:white;
+}
+.item-specs  div.sub-specs {
+    border: 1px solid #CCC;
+    padding: 8px;
+}
+
+.item-specs {
+    background:#F58723;
+    color: white;
+}
+
+
+
+#brand-select{
+    padding-bottom: 48px;
+}
