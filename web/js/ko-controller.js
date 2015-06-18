@@ -1,6 +1,9 @@
 // Class to represent a row in the seat reservations grid
 $(document).ready(function(){
 
+function genRemoveRoute(item) {
+    return Routing.generate('ja_cable_remove', { id: item });
+}
 
 function Cable(data) {
     var self = this;
@@ -12,6 +15,7 @@ function Cable(data) {
     self.length = data.length;
     self.imageUrl = data.imageUrl;
     self.snippet = data.snippet;
+    self.remRoute = genRemoveRoute(data.id);
 }
 
 function CableViewModel() {

@@ -11,6 +11,8 @@ ja_cable_remove:
     defaults: { _controller: JACableBundle:Advert:remove }
     requirements:
         id: \d+
+    options:
+        expose: true
 
 ja_cable_view:
     path: /{id}

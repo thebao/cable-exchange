@@ -14,6 +14,8 @@
     <script type="text/javascript" src="{{ asset('js/lib/ko/knockout.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/lib/ko/mapping.js')}}"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
     <!--
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
     <script type="text/javascript" src="js/controllers.js"></script>
@@ -27,118 +29,9 @@
         <div class="row page-body">
             <div class="left-side col-md-2">
                 <div id="sidebar">
+                    {% block sidebar %}
                     <!--Sidebar content-->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <br/>
-                            <select id="brand-select" class="form-control">
-                                <option></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 toggle-wrap">
-                            <br/>
-                            <h4>Trier par <span class="white toggler" href=""><i class="fa fa-caret-down"></i></span></h4>
-                            <div class="toggle-zone">
-                                <div class="radio noselect">
-                                    <input type="radio" id="b1" name="b" value="volts" data-bind="checked: sortBy"/>
-                                    <label for="b1"><span></span><strong>Voltage</strong></label>
-                                </div>
-                                <div class="radio noselect">
-                                    <input type="radio" id="b2" name="b" value="amps" data-bind="checked: sortBy"  />
-                                    <label for="b2"><span></span>Ampérage</label>
-                                </div>
-                                <div class="radio noselect">
-                                    <input type="radio" id="b3" name="b" value="length" data-bind="checked: sortBy" />
-                                    <label for="b3"><span></span>Longueur</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 toggle-wrap">
-                            <h4>Appareil <span class="white toggler" href=""><i class="fa fa-caret-down"></i></span></h4>
-                            <div class="toggle-zone">
-                                <div class="radio noselect">
-                                    <input type="radio" id="a4" name="a" value="all" data-bind="checked: filterType"/>
-                                    <label for="a4"><span></span><strong>Tous</strong></label>
-                                </div>
-                                <div class="radio noselect">
-                                    <input type="radio" id="a1" name="a" value="phone" data-bind="checked: filterType"  />
-                                    <label for="a1"><span></span>Téléphone</label>
-                                </div>
-                                <div class="radio noselect">
-                                    <input type="radio" id="a2" name="a" value="laptop" data-bind="checked: filterType" />
-                                    <label for="a2"><span></span>Portable</label>
-                                </div>
-                                <div class="radio noselect">
-                                    <input type="radio" id="a3" name="a" value="tablet"  data-bind="checked: filterType" />
-                                    <label for="a3"><span></span>Tablette</label>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 toggle-wrap">
-                            <h4>Connecteur <span class="white toggler" href=""><i class="fa fa-caret-down"></i></span></h4>
-                            <div class="toggle-zone connectors">
-                                <div class="radio">
-                                    <input type="checkbox" id="b1" name="b1" checked/>
-                                    <label for="b1"><img src="{{ asset('img/connect/c1-c2.svg')}}" class="svg-inject" alt="c1-c2"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b2" name="b2" checked/>
-                                    <label for="b2"><img src="{{ asset('img/connect/c3-c4.svg')}}" class="svg-inject" alt="c3-c4"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b3" name="b3" checked/>
-                                    <label for="b3"><img src="{{ asset('img/connect/c5-c6.svg')}}" class="svg-inject" alt="c5-c6"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b4" name="b4" checked/>
-                                    <label for="b4"><img src="{{ asset('img/connect/c7-c8.svg')}}" class="svg-inject" alt="c7-c8"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b5" name="b5" checked/>
-                                    <label for="b5"><img src="{{ asset('img/connect/c9-c10.svg')}}" class="svg-inject" alt="c9-c10"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b6" name="b6" checked/>
-                                    <label for="b6"><img src="{{ asset('img/connect/c11-c12.svg')}}" class="svg-inject" alt="c11-c12"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b7" name="b7" checked/>
-                                    <label for="b7"><img src="{{ asset('img/connect/c13-c14.svg')}}" class="svg-inject" alt="c13-c14"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b8" name="b8" checked/>
-                                    <label for="b8"><img src="{{ asset('img/connect/c15-c16.svg')}}" class="svg-inject" alt="c15-c16"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b9" name="b9" checked/>
-                                    <label for="b9"><img src="{{ asset('img/connect/c15a-c16a.svg')}}" class="svg-inject" alt="c15a-c16a"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b10" name="b10" checked/>
-                                    <label for="b10"><img src="{{ asset('img/connect/c17-c18.svg')}}" class="svg-inject" alt="c17-c18"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b11" name="b11" checked/>
-                                    <label for="b11"><img src="{{ asset('img/connect/c19-c20.svg')}}" class="svg-inject" alt="c19-c20"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b12" name="b12" checked/>
-                                    <label for="b12"><img src="{{ asset('img/connect/c21-c22.svg')}}" class="svg-inject" alt="c21-c22"/></label>
-                                </div>
-                                <div class="radio">
-                                    <input type="checkbox" id="b13" name="b13" checked/>
-                                    <label for="b13"><img src="{{ asset('img/connect/c23-c24.svg')}}" class="svg-inject" alt="c23-c24"/></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endblock %}
                 </div>
             </div>
             <div class="right-side col-md-10">
@@ -153,7 +46,6 @@
     var configuration = {
         JSONUrl: "{{ path('ja_cable_json') }}",
         chargerImgUrl: "{{ asset('img/chargers/') }}"
-        removeItemUrl: '{{ path("ja_cable_remove", {'id': 'region_id'}) }}';
     }
 </script>
 

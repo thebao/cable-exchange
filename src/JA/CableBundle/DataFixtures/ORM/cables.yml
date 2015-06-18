@@ -55,3 +55,207 @@ JA\CableBundle\Entity\Cable:
     length: 1.7
     imageUrl: laptop2.jpg
     description: In placerat tincidunt ligula, in consectetur mauris gravida nec.
+
+JA\CableBundle\Entity\Brands:
+  brand1:
+    name: Alcatel
+  brand2:
+    name: Amazon
+  brand3:
+    name: Apple
+  brand4:
+    name: Asus
+  brand5:
+    name: Benefon
+  brand6:
+    name: BenQ-Siemens
+  brand7:
+    name: BlackBerry
+  brand8:
+    name: Bosch
+  brand9:
+    name: Cat
+  brand10:
+    name: Chea
+  brand11:
+    name: Emporia
+  brand12:
+    name: Eten
+  brand13:
+    name: Garmin-Asus
+  brand14:
+    name: Gionee
+  brand15:
+    name: HP
+  brand16:
+    name: Huawei
+  brand17:
+    name: i-mobile
+  brand18:
+    name: Innostream
+  brand19:
+    name: Jolla
+  brand20:
+    name: Kyocera
+  brand21:
+    name: Lenovo
+  brand22:
+    name: Maxon
+  brand23:
+    name: Meizu
+  brand24:
+    name: Microsoft
+  brand25:
+    name: Mitsubishi
+  brand26:
+    name: Motorola
+  brand27:
+    name: NEC
+  brand28:
+    name: NIU
+  brand29:
+    name: Nvidia
+  brand30:
+    name: OnePlus
+  brand31:
+    name: Orange
+  brand32:
+    name: Panasonic
+  brand33:
+    name: Parla
+  brand34:
+    name: Plum
+  brand35:
+    name: Prestigio
+  brand36:
+    name: Sagem
+  brand37:
+    name: Sendo
+  brand38:
+    name: Sharp
+  brand39:
+    name: Sonim
+  brand40:
+    name: Sony Ericsson
+  brand41:
+    name: T-Mobile
+  brand42:
+    name: Telit
+  brand43:
+    name: Toshiba
+  brand44:
+    name: Vertu
+  brand45:
+    name: vivo
+  brand46:
+    name: Vodafone
+  brand47:
+    name: WND
+  brand48:
+    name: Xiaomi
+  brand49:
+    name: Yezz
+  brand50:
+    name: YU
+  brand51:
+    name: Acer
+  brand52:
+    name: Allview
+  brand53:
+    name: Amoi
+  brand54:
+    name: Archos
+  brand55:
+    name: AT&T
+  brand56:
+    name: BenQ
+  brand57:
+    name: Bird
+  brand58:
+    name: BLU
+  brand59:
+    name: Casio
+  brand60:
+    name: Celkon
+  brand61:
+    name: Dell
+  brand62:
+    name: Ericsson
+  brand63:
+    name: Fujitsu Siemens
+  brand64:
+    name: Gigabyte
+  brand65:
+    name: Haier
+  brand66:
+    name: HTC
+  brand67:
+    name: i-mate
+  brand68:
+    name: Icemobile
+  brand69:
+    name: iNQ
+  brand70:
+    name: Karbonn
+  brand71:
+    name: Lava
+  brand72:
+    name: LG
+  brand73:
+    name: Maxwest
+  brand74:
+    name: Micromax
+  brand75:
+    name: Mitac
+  brand76:
+    name: Modu
+  brand77:
+    name: MWg
+  brand78:
+    name: Neonode
+  brand79:
+    name: Nokia
+  brand80:
+    name: O2
+  brand81:
+    name: Oppo
+  brand82:
+    name: Palm
+  brand83:
+    name: Pantech
+  brand84:
+    name: Philips
+  brand85:
+    name: Posh
+  brand87:
+    name: Qtek
+  brand88:
+    name: Samsung
+  brand100:
+    name: Sewon
+  brand102:
+    name: Siemens
+  brand103:
+    name: Sony
+  brand104:
+    name: Spice
+  brand105:
+    name: Tel.Me.
+  brand106:
+    name: Thuraya
+  brand107:
+    name: Unnecto
+  brand108:
+    name: verykool
+  brand109:
+    name: VK Mobile
+  brand110:
+    name: Wiko
+  brand111:
+    name: XCute
+  brand112:
+    name: XOLO
+  brand113:
+    name: Yota
+  brand114:
+    name: ZTE

@@ -22,6 +22,12 @@ class Cable
     private $id;
 
     /**
+     * @var \DateTime
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $createdAt;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
@@ -45,21 +51,21 @@ class Cable
     /**
      * @var string
      *
-     * @ORM\Column(name="volts", type="decimal", nullable=true)
+     * @ORM\Column(name="volts", type="float", nullable=true)
      */
     private $volts = null;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="amps", type="decimal", nullable=true)
+     * @ORM\Column(name="amps", type="float", nullable=true)
      */
     private $amps = null;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="length", type="decimal", nullable=true)
+     * @ORM\Column(name="length", type="float", nullable=true)
      */
     private $length = null;
 
@@ -71,6 +77,11 @@ class Cable
     private $type;
 
 
+    public function __construct()
+    {
+        // Par défaut, la date de l'annonce est la date d'aujourd'hui
+        $this->createdAt = new \Datetime();
+    }
 
 
 
