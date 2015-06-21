@@ -21,6 +21,8 @@ class AppKernel extends Kernel
             new Hautelook\AliceBundle\HautelookAliceBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new JA\UserBundle\JAUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

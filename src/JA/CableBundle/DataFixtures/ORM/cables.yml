@@ -1,3 +1,10 @@
+JA\UserBundle\Entity\User:
+  User0:
+    username: admin
+    email: admin@local.com
+    enabled: 1
+    plainPassword: admin
+    roles: [ROLE_ADMIN]
 JA\CableBundle\Entity\Cable:
   cable1:
     name: Chargeur DS LITE
@@ -5,7 +12,7 @@ JA\CableBundle\Entity\Cable:
     amps: 1
     type: 3
     length: 1.2
-    imageUrl: phone1.jpg
+    image: @image7
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   cable2:
     name: Motorola XOOM with Wi-Fi
@@ -13,7 +20,7 @@ JA\CableBundle\Entity\Cable:
     amps: 1.7
     type: 2
     length: 3
-    imageUrl: laptop1.jpg
+    image: @image6
     description: Curabitur eu odio imperdiet, blandit lacus eu, pulvinar ante.
   cable3:
     name: Galaxy S6
@@ -21,7 +28,7 @@ JA\CableBundle\Entity\Cable:
     amps: 4.1
     type: 1
     length: 1.4
-    imageUrl: phone3.jpg
+    image: @image5
     description: Etiam ac tempus metus, at imperdiet dolor. Integer ut feugiat libero. 
   cable4:
     name: Cisco WP-75S
@@ -29,7 +36,7 @@ JA\CableBundle\Entity\Cable:
     amps: 2.8
     type: 3
     length: 4.5
-    imageUrl: router2.jpg
+    image: @image4
     description: Sed nibh lorem, rutrum id enim id, volutpat mattis odio.
   cable5:
     name: Chargeur iPhone 6
@@ -37,7 +44,7 @@ JA\CableBundle\Entity\Cable:
     amps: 1.4
     type: 1
     length: 2.1
-    imageUrl: phone2.jpg
+    image: @image3
     description: Nullam ut interdum nulla. Duis quis tellus viverra, dapibus metus nec, pharetra tellus.
   cable6:
     name: Routeur LinkSys
@@ -45,7 +52,7 @@ JA\CableBundle\Entity\Cable:
     amps: 7.2
     type: 3
     length: 3.5
-    imageUrl: router1.jpg
+    image: @image2
     description: Sed et posuere nibh. 
   cable7:
     name: Tablette Nexus One
@@ -53,9 +60,8 @@ JA\CableBundle\Entity\Cable:
     amps: 3.5
     type: 1
     length: 1.7
-    imageUrl: laptop2.jpg
+    image: @image1
     description: In placerat tincidunt ligula, in consectetur mauris gravida nec.
-
 JA\CableBundle\Entity\Brands:
   brand1:
     name: Alcatel

@@ -5,4 +5,7 @@
 {% block jacable_body %}
     <h3>{{ cable.name }}</h3>
     <p>{{ cable.description }}</p>
+    {% if cable.user is not null %}
+        annonce ajoutée par {{ cable.user.username }} le {{ cable.createdAt|date('d/m/Y') }}
+    {% endif %}
 {% endblock %}

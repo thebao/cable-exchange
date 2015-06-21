@@ -3,7 +3,9 @@
 namespace JA\CableBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use JA\UserBundle\JAUserBundle;
+use JA\CableBundle\JACableBundle;
+use JA\CableBundle\Entity\Image;
 /**
  * Cable
  *
@@ -34,12 +36,6 @@ class Cable
      */
     private $name;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="imageUrl", type="string", length=255, nullable=true)
-     */
-    private $imageUrl = null;
 
     /**
      * @var string
@@ -70,6 +66,19 @@ class Cable
     private $length = null;
 
     /**
+     * @var Image
+     * @ORM\OneToOne(targetEntity="JA\CableBundle\Entity\Image", cascade={"persist", "remove"})
+     *     */
+    private $image;
+
+    /**
+     * @var User
+     * @ORM\ManyToOne(targetEntity="JA\UserBundle\Entity\User", inversedBy="cables")
+     */
+    private $user;
+
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="type", type="integer")
@@ -88,7 +97,7 @@ class Cable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -111,35 +120,13 @@ class Cable
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * Set imageUrl
-     *
-     * @param string $imageUrl
-     * @return Cable
-     */
-    public function setImageUrl($imageUrl)
-    {
-        $this->imageUrl = $imageUrl;
-
-        return $this;
-    }
-
-    /**
-     * Get imageUrl
-     *
-     * @return string 
-     */
-    public function getImageUrl()
-    {
-        return $this->imageUrl;
-    }
 
     /**
      * Set description
@@ -157,7 +144,7 @@ class Cable
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -180,7 +167,7 @@ class Cable
     /**
      * Get volts
      *
-     * @return string 
+     * @return string
      */
     public function getVolts()
     {
@@ -203,7 +190,7 @@ class Cable
     /**
      * Get amps
      *
-     * @return string 
+     * @return string
      */
     public function getAmps()
     {
@@ -226,7 +213,7 @@ class Cable
     /**
      * Get length
      *
-     * @return string 
+     * @return string
      */
     public function getLength()
     {
@@ -249,7 +236,7 @@ class Cable
     /**
      * Get type
      *
-     * @return integer 
+     * @return integer
      */
     public function getType()
     {
@@ -258,18 +245,92 @@ class Cable
 
     public function getJSONArray()
     {
+
         $array = array();
         $array['id'] = $this->id;
         $array['name'] = $this->name;
         $array['snippet'] = $this->description;
-        $array['imageUrl'] = $this->imageUrl;
         $array['amps'] = $this->amps;
         $array['volts'] = $this->volts;
         $array['length'] = $this->length;
+        $array['imageUrl'] = null;
+        if(null !== $this->image){
+            $array['imageUrl'] = $this->image->getId().".".$this->image->getUrl();
+        }
         $array['type'] = $this->type;
 
         return $array;
     }
 
 
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Cable
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+
+    /**
+     * Set user
+     *
+     * @param \JA\UserBundle\Entity\User $user
+     * @return Cable
+     */
+    public function setUser(\JA\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \JA\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \JA\CableBundle\Entity\Image $image
+     * @return Cable
+     */
+    public function setImage(\JA\CableBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \JA\CableBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }

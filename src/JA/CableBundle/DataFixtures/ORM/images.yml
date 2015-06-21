@@ -1,0 +1,22 @@
+JA\CableBundle\Entity\Image:
+  image1:
+    alt: bao
+    url: router1.jpg
+  image2:
+    alt: bao
+    url: laptop2.jpg
+  image3:
+    alt: bao
+    url: phone1.jpg
+  image4:
+    alt: bao
+    url: laptop4.jpg
+  image5:
+    alt: bao
+    url: router1.jpg
+  image6:
+    alt: bao
+    url: laptop5.jpg
+  image7:
+    alt: bao
+    url: phone4.jpg

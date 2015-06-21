@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AdvertController extends Controller
 {
@@ -28,8 +29,11 @@ class AdvertController extends Controller
 
         $form->handleRequest($request);
 
+        $user = $this->getUser();
+
         if ($form->isValid()){
             $em = $this->getDoctrine()->getManager();
+            $cable->setUser($user);
             $em->persist($cable);
             $em->flush();
 

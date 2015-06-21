@@ -1,0 +1,15 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+    Cables - {{ parent() }}
+{% endblock %}
+
+{% block sidebar %}
+    {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+
+    {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+
+    {% block fos_user_content %}
+    {% endblock %}
+
+{% endblock %}

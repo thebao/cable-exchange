@@ -5,6 +5,7 @@ namespace JA\CableBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use JA\CableBundle\Entity\Image;
 
 class CableType extends AbstractType
 {
@@ -28,6 +29,7 @@ class CableType extends AbstractType
                     ),
                     'required' => true)
             )
+            ->add('image',              new ImageType(), array('required' => false))
             ->add('reset',          'reset')
             ->add('save',           'submit');
         ;

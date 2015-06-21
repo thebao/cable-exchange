@@ -22,9 +22,18 @@
     -->
 </head>
 <body ng-controller="PhoneListCtrl">
+    {% block user_bar %}
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            Connecté en tant que
+            <a href="{{ path('fos_user_profile_edit') }}">{{ app.user.username }}</a> -
+            <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+        {% endif %}
+    {% endblock %}
     <div class="container-fluid">
         <h1>
-            <a href="./">cableXchange</a>
+            <a href="{{ path('ja_cable_home') }}">cableXchange</a>
         </h1>
         <div class="row page-body">
             <div class="left-side col-md-2">
