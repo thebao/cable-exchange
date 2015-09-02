@@ -7,52 +7,52 @@
 
 
 {% block jacable_body %}
-<h3>Ajouter un cable:</h3>
+<h3>{{ 'advert.cable.add'|trans }}</h3>
 {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
     <div class="form-group">
-        {{ form_label(form.name, "Titre de l'annonce", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_label(form.name, 'advert.cable.title'|trans, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
         {{ form_errors(form.name) }}
         <div class="col-sm-4">
             {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
     <div class="form-group">
-        {{ form_label(form.description, "Contenu de l'annonce", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_label(form.description, 'advert.cable.content'|trans, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
         {{ form_errors(form.description) }}
         <div class="col-sm-4">
             {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
     <div class="form-group">
-        {{ form_label(form.volts, "Volts", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_label(form.volts, 'advert.cable.volts'|trans, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
         {{ form_errors(form.volts) }}
         <div class="col-sm-2">
             {{ form_widget(form.volts, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
     <div class="form-group">
-        {{ form_label(form.amps, "Ampères", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_label(form.amps, 'advert.cable.amps'|trans, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
         {{ form_errors(form.amps) }}
         <div class="col-sm-2">
             {{ form_widget(form.amps, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
     <div class="form-group">
-        {{ form_label(form.length, "Longueur", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_label(form.length, 'advert.cable.length'|trans, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
         {{ form_errors(form.length) }}
         <div class="col-sm-2">
             {{ form_widget(form.length, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
     <div class="form-group">
-        {{ form_label(form.type, "Type d'appareil", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_label(form.type, 'advert.cable.device'|trans, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
         {{ form_errors(form.type) }}
         <div class="col-sm-2">
             {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
         </div>
     </div>
     <div class="form-group">
-        {{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_label(form.image, 'advert.cable.content'|trans, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
         {{ form_errors(form.image) }}
         <div class="col-sm-2">
             {{ form_widget(form.image, {'attr': {'class': 'form-control'}}) }}

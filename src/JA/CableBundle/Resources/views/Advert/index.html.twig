@@ -1,6 +1,6 @@
 {% extends "JACableBundle::layout.html.twig" %}
 
-{% block title %}{{ parent() }} - Index{% endblock %}
+{% block title %}{{ parent() }}{% endblock %}
 
 {% block sidebar %}
     <div class="row">
@@ -17,42 +17,42 @@
     <div class="row">
         <div class="col-md-12 toggle-wrap">
             <br/>
-            <h4>Trier par <span class="white toggler" href=""><i class="fa fa-caret-down"></i></span></h4>
+            <h4>{{ 'search.sortby'|trans }} <span class="white toggler" href=""><i class="fa fa-caret-down"></i></span></h4>
             <div class="toggle-zone">
                 <div class="radio noselect">
                     <input type="radio" id="b1" name="b" value="volts" data-bind="checked: sortBy"/>
-                    <label for="b1"><span></span><strong>Voltage</strong></label>
+                    <label for="b1"><span></span><strong>{{ 'search.tension'|trans }}</strong></label>
                 </div>
                 <div class="radio noselect">
                     <input type="radio" id="b2" name="b" value="amps" data-bind="checked: sortBy"  />
-                    <label for="b2"><span></span>Ampérage</label>
+                    <label for="b2"><span></span>{{ 'search.current'|trans }}</label>
                 </div>
                 <div class="radio noselect">
                     <input type="radio" id="b3" name="b" value="length" data-bind="checked: sortBy" />
-                    <label for="b3"><span></span>Longueur</label>
+                    <label for="b3"><span></span>{{ 'search.length'|trans }}</label>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 toggle-wrap">
-            <h4>Appareil <span class="white toggler" href=""><i class="fa fa-caret-down"></i></span></h4>
+            <h4>{{ 'search.device'|trans }} <span class="white toggler" href=""><i class="fa fa-caret-down"></i></span></h4>
             <div class="toggle-zone">
                 <div class="radio noselect">
                     <input type="radio" id="a4" name="a" value="all" data-bind="checked: filterType"/>
-                    <label for="a4"><span></span><strong>Tous</strong></label>
+                    <label for="a4"><span></span><strong>{{ 'search.device.all'|trans }}</strong></label>
                 </div>
                 <div class="radio noselect">
                     <input type="radio" id="a1" name="a" value="1" data-bind="checked: filterType"  />
-                    <label for="a1"><span></span>Téléphone</label>
+                    <label for="a1"><span></span>{{ 'search.device.phone'|trans }}</label>
                 </div>
                 <div class="radio noselect">
                     <input type="radio" id="a2" name="a" value="2" data-bind="checked: filterType" />
-                    <label for="a2"><span></span>Portable</label>
+                    <label for="a2"><span></span>{{ 'search.device.laptop'|trans }}</label>
                 </div>
                 <div class="radio noselect">
                     <input type="radio" id="a3" name="a" value="3"  data-bind="checked: filterType" />
-                    <label for="a3"><span></span>Tablette</label>
+                    <label for="a3"><span></span>{{ 'search.device.tablet'|trans }}</label>
                 </div>
 
             </div>
@@ -60,7 +60,7 @@
     </div>
     <div class="row">
         <div class="col-md-12 toggle-wrap">
-            <h4>Connecteur <span class="white toggler" href=""><i class="fa fa-caret-down"></i></span></h4>
+            <h4>{{ 'search.connector'|trans }} <span class="white toggler" href=""><i class="fa fa-caret-down"></i></span></h4>
             <div class="toggle-zone connectors">
                 <div class="radio">
                     <input type="checkbox" id="c1" name="b1" checked/>
@@ -121,7 +121,7 @@
 
 
 {% block jacable_body %}
-<h3>Showing <span data-bind="text: filteredCables().length"></span> result<span data-bind="visible: filteredCables().length>1">s.</span></h3>
+<h3>{{ 'search.showing'|trans }} <span data-bind="text: filteredCables().length"></span> {{ 'search.result'|trans }}<span data-bind="visible: filteredCables().length>1">s.</span></h3>
 <ul class="phones" data-bind="foreach: filteredCables().sort(sorter)">
     <li>
         <h4>
@@ -134,7 +134,7 @@
             <div class="float-left">
                 <p data-bind="text: snippet"></p>
                 <p data-bind="text: type"></p>
-                <a href="" data-bind="attr: { href: remRoute}">remove</a>
+                <a class="btn btn-xs btn-danger" href="" data-bind="attr: { href: remRoute}">{{ 'cable.remove'|trans }}</a>
             </div>
         </div>
         <div class="float-right item-specs">

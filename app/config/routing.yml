@@ -1,13 +1,6 @@
-ja_user:
-    resource: "@JAUserBundle/Resources/config/routing.yml"
-    prefix:   /
-
-ja_cable_home:
-    resource: "@JACableBundle/Resources/config/routing.yml"
-    prefix:   /
-
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+    prefix: /{_locale}
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -28,10 +21,14 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
 
+ja_cable:
+    resource: "@JACableBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}
+
 
 remove_trailing_slash:
     path: /{url}
-    defaults: { _controller: OCPlatformBundle:Redirecting:removeTrailingSlash }
+    defaults: { _controller: JACableBundle:Redirecting:removeTrailingSlash }
     requirements:
         url: .*/$
     methods: [GET]

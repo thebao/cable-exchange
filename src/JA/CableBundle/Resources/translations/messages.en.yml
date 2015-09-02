@@ -1,0 +1,24 @@
+advert.cable.title: 'Advert Title'
+advert.cable.content: 'Advert Content'
+advert.cable.volts: 'Tension (volts)'
+advert.cable.amps: 'Current (amps)'
+advert.cable.length: 'Length (m)'
+advert.cable.device: 'Device Type'
+search.sortby: 'Sort by'
+search.tension: 'Tension (volts)'
+search.current: 'Current (amps)'
+search.length: 'Length (m)'
+search.device: 'Device Type'
+search.device.all: All
+search.device.phone: Phone
+search.device.laptop: Laptop
+search.device.tablet: Tablet
+search.connector: Connector
+search.showing: Showing
+search.result: result
+search.brand: 'Choose a brand'
+cable.remove: remove
+advert.cable.add: 'Add an Advert'
+user.connected: 'Connected as'
+user.connect: 'Connect'
+user.disconnect: 'Disconnect'

@@ -16,6 +16,7 @@ class LoadCables extends DataFixtureLoader
     protected function getFixtures()
     {
         return  array(
+            __DIR__ . '/images.yml',
             __DIR__ . '/cables.yml'
         );
     }

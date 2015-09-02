@@ -14,6 +14,7 @@
     <script type="text/javascript" src="{{ asset('js/lib/ko/knockout.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/lib/ko/mapping.js')}}"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
     <!--
@@ -22,39 +23,74 @@
     -->
 </head>
 <body ng-controller="PhoneListCtrl">
-    {% block user_bar %}
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            Connecté en tant que
-            <a href="{{ path('fos_user_profile_edit') }}">{{ app.user.username }}</a> -
-            <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
-        {% else %}
-            <a href="{{ path('fos_user_security_login') }}">Connexion</a>
-        {% endif %}
-    {% endblock %}
-    <div class="container-fluid">
-        <h1>
-            <a href="{{ path('ja_cable_home') }}">cableXchange</a>
-        </h1>
-        <div class="row page-body">
-            <div class="left-side col-md-2">
-                <div id="sidebar">
-                    {% block sidebar %}
-                    <!--Sidebar content-->
-                    {% endblock %}
-                </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1>
+                    <a class="navbar-brand" href="{{ path('ja_cable_home') }}">cableXchange</a>
+                </h1>
             </div>
-            <div class="right-side col-md-10">
-                {% block body %}
-                {% endblock %}
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation">
 
+                    </li>
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation"><a href="#">Add</a></li>
+                    <li role="presentation"><a href="#">Profile</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% block user_bar %}
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li>{{ 'user.connected'|trans }}&nbsp;</li>
+                            <li><a class="escape-nav-style" href="{{ path('fos_user_profile_edit') }}">{{ app.user.username }}</a> -
+                            <a  class="escape-nav-style" href="{{ path('fos_user_security_logout') }}">{{ 'user.disconnect'|trans }}</a></li>
+                        {% else %}
+                            <li><a class="escape-nav-style" href="{{ path('fos_user_security_login') }}">{{ 'user.connect'|trans }}</a></li>
+                        {% endif %}
+                        {% set params = app.request.attributes.get('_route_params')|merge(app.request.query.all()) %}
+                        {% set frParams = params|merge({'_locale': 'fr'}) %}
+                        {% set enParams = params|merge({'_locale': 'en'}) %}
+                        <li>&nbsp;<a class="escape-nav-style" {%if app.request.locale == "fr"%} class="active-lang" {% endif %} href="{{ path(app.request.attributes.get('_route'), frParams) }}"><img src="{{ asset('img/flags/fr.png') }}" /></a></li>
+                        <li>&nbsp;<a class="escape-nav-style" {%if app.request.locale == "en"%} class="active-lang" {% endif %} href="{{ path(app.request.attributes.get('_route'), enParams) }}"><img src="{{ asset('img/flags/gb.png') }}" /></a></li>
+                    {% endblock %}
+                </ul>
             </div>
         </div>
-    </div>
+
+    </nav>
+            <div id="left-bar" class="col-md-3">
+                <div class="left-side">
+                    <div id="sidebar">
+                        {% block sidebar %}
+                        <!--Sidebar content-->
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="right-side">
+                    {% block body %}
+                    {% endblock %}
+
+                </div>
+            </div>
 
 <script type="text/javascript">
     var configuration = {
         JSONUrl: "{{ path('ja_cable_json') }}",
-        chargerImgUrl: "{{ asset('img/chargers/') }}"
+        chargerImgUrl: "{{ asset('img/chargers/') }}",
+        locale: "{{ app.request.locale }}",
+        placeholder:{
+            brand: "{{ 'search.brand'|trans }}"
+        }
     }
 </script>
 

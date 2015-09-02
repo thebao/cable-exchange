@@ -7,14 +7,37 @@ a:hover, a:active, a:focus {
     src: url("../fonts/RaysHand-Regular.ttf");
 }
 
-h1{
-    margin: 0px -15px 0px -15px;
-    padding:24px;
-    background:#F58723;
+h1 a.navbar-brand{
     color:#327CCB;
-    margin-left: -15px;
+    font-size:1.2em;
     font-family: "Header";
+    text-shadow: 1px 1px #333;
 }
+
+h1 a.navbar-brand:hover{
+    color:#327CCB;
+    text-decoration: none;
+    text-shadow: 2px 2px #F58723;
+}
+
+.navbar-default {
+    background: none;
+}
+.navbar-nav {
+    padding-top: 24px;
+    padding-left:24px;
+}
+
+.nav > li > a.escape-nav-style{
+    display: inline;
+    padding:0;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: #F2F2F2;
+    background-color: #327CCB;
+}
+
+
 
 .noselect {
     -webkit-touch-callout: none;
@@ -33,7 +56,9 @@ a.white {
 }
 
 
+.active-lang{
 
+}
 
 #sidebar{
     color: #FFF;
@@ -41,6 +66,9 @@ a.white {
     margin-left:-15px;
     padding:15px;
     background-color: #327CCB;
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.24);
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.24);
 }
 
 .page-body > .right-side {
@@ -54,10 +82,8 @@ a.white {
     cursor: pointer;
 }
 .toggle-wrap{
-    width: 180px;
 }
 .toggle-zone{
-    width: 140px;
     margin:0 !important;
     padding: 0 !important;
     height:auto;

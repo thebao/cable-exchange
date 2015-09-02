@@ -1,0 +1,19 @@
+advert.cable.title: 'Titre de l''annonce'
+advert.cable.content: 'Contenu de l''annonce'
+advert.cable.volts: 'Tensionn (volts)'
+advert.cable.amps: 'Intensité (Ampères)'
+advert.cable.length: 'Longueur (mètres)'
+advert.cable.device: 'Type d''appareil'
+advert.cable.add: 'Ajouter une annonce'
+search.sortby: 'Trier par'
+search.tension: 'Tension (volts)'
+search.current: 'Intensité (Ampères)'
+search.length: 'Longueur (mètres)'
+search.device: 'Type d''appareil'
+search.device.all: 'Tous'
+search.device.phone: Téléphone
+search.device.laptop: Portable
+search.device.tablet: Tablette
+search.connector: Connecteur
+cable.remove: supprimer
+

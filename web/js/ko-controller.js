@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 function genRemoveRoute(item) {
-    return Routing.generate('ja_cable_remove', { id: item });
+    return Routing.generate('ja_cable_remove', { id: item, _locale:configuration.locale });
 }
 
 function Cable(data) {

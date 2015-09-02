@@ -2,13 +2,19 @@
  * Created by theo on 08/06/15.
  */
 $(document).ready(function(){
+
+    $(function(){
+        var sideBarNavWidth=$('#leftcolumn').width() - parseInt($('#leftcolumn').css('paddingLeft')) - parseInt($('#leftcolumn').css('paddingRight'));
+        $('#leftcolumn').css('width', sideBarNavWidth);
+    });
+
     var mySVGsToInject = document.querySelectorAll('img.svg-inject');
     SVGInjector(mySVGsToInject);
 
 
 
     $('#brand-select').select2({
-        placeholder: "Choisir une marque",
+        placeholder: configuration.placeholder.brand,
         allowClear: true
     });
     $('#sidebar').affix({
